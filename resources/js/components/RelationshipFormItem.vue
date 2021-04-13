@@ -40,7 +40,7 @@
         <div v-for="(field, attrib) in fields"
             :key="attrib"
             class="nova-items-field-input-wrapper w-full">
-            <component :is="'detail-' + field.component"
+            <component :is="'form-' + field.component"
                 :ref="attrib"
                 :field="field"
                 :full-width-content="true"
