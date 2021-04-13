@@ -28,7 +28,7 @@
         />
       </draggable>
       <div
-        v-if="!field.singular || !items.length || isReadonly"
+        v-if="(!field.singular || !items.length) && !isReadonly"
         class="bg-30 flex p-2 border-b border-40 rounded-lg"
       >
         <div class="w-full text-right">
