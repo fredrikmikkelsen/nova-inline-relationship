@@ -71,8 +71,6 @@
                 return _.keyBy(
                     Object.keys({ ...this.value }).map(
                         attrib => {
-                          console.log(this.value);
-                          console.log(this.value[attrib].meta);
                             return {
                                 ...{
                                     'options': {}

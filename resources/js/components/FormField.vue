@@ -67,6 +67,10 @@ export default {
         }
     },
 
+    mounted() {
+      console.log('mount', this.field);
+    },
+
     watch: {
         errors: function (errors) {
             let errObj = errors.errors.hasOwnProperty(this.field.attribute) ? errors.errors[this.field.attribute][0] : {};
@@ -90,6 +94,8 @@ export default {
          */
         setInitialValue() {
             this.items = Array.isArray(this.field.value) ? this.field.value : [];
+            console.log('items', this.items);
+            console.log('field', this.field);
             this.items = this.items.map((item, index) => {
                 return {
                 	'id': this.getNextId(),
