@@ -45,6 +45,7 @@
                 :field="field"
                 :full-width-content="true"
                 :errors="errors"
+                :disabled="true"
                 :resource-id="modelId"
                 :resource-name="modelKey">
             </component>

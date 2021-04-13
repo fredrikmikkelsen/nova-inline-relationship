@@ -39,6 +39,7 @@
                     :key="attrib">
                     <component :is="'detail-' + parameter.meta.component"
                         :field="parameter.meta"
+                         :disabled="true"
                         :resource-id="modelId"
                         :resource-name="modelKey">
                     </component>
