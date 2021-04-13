@@ -40,12 +40,11 @@
         <div v-for="(field, attrib) in fields"
             :key="attrib"
             class="nova-items-field-input-wrapper w-full">
-            <component :is="'form-' + field.component"
+            <component :is="'detail-' + field.component"
                 :ref="attrib"
                 :field="field"
                 :full-width-content="true"
                 :errors="errors"
-                :disabled="true"
                 :resource-id="modelId"
                 :resource-name="modelKey">
             </component>
