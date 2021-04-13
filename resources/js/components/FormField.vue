@@ -70,6 +70,13 @@ export default {
 
     mounted() {
       console.log('mount', this.field);
+      const items = this.field.value;
+      if (items.length === 0) return;
+
+      const firstItem = items[0];
+      console.log(firstItem);
+      console.log(firstItem[Object.keys(firstItem)[0]]);
+      this.isReadonly = firstItem[Object.keys(firstItem)[0]].meta.readonly;
     },
 
     watch: {
@@ -95,12 +102,7 @@ export default {
          */
         setInitialValue() {
             this.items = Array.isArray(this.field.value) ? this.field.value : [];
-            let firstObj = this.items[0];
-            this.isReadonly = firstObj[Object.keys(firstObj)][0].meta.readonly;
-            console.log('items', this.items);
-            console.log('firstObj', firstObj);
-            console.log('isReadonly', this.isReadonly);
-            console.log(' firstObj[Object.keys(firstObj)][0]',  firstObj[Object.keys(firstObj)][0]);
+
             this.items = this.items.map((item, index) => {
                 return {
                 	'id': this.getNextId(),
