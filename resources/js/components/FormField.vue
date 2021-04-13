@@ -24,10 +24,11 @@
           :errors="errorList"
           :field="field"
           @deleted="removeItem(index)"
+          :is-readonly="isReadonly"
         />
       </draggable>
       <div
-        v-if="!field.singular || !items.length"
+        v-if="!field.singular || !items.length || isReadonly"
         class="bg-30 flex p-2 border-b border-40 rounded-lg"
       >
         <div class="w-full text-right">
@@ -72,10 +73,7 @@ export default {
       console.log('mount', this.field);
       const items = this.field.value;
       if (items.length === 0) return;
-
       const firstItem = items[0];
-      console.log(firstItem);
-      console.log(firstItem[Object.keys(firstItem)[0]]);
       this.isReadonly = firstItem[Object.keys(firstItem)[0]].meta.readonly;
     },
 
